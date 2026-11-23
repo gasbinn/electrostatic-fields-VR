@@ -4,7 +4,7 @@
       "type": "local",
       "command": [
         "node",
-        "C:\\GasbinPersonal\\GasbinCoding\\electrostatics-fields-XR\\node_modules\\@iwsdk\\cli\\dist\\cli.js",
+        "C:\\GasbinPersonal\\GasbinCoding\\electrostatics-fields-VR\\node_modules\\@iwsdk\\cli\\dist\\cli.js",
         "mcp",
         "stdio"
       ],
@@ -14,7 +14,7 @@
       "type": "local",
       "command": [
         "node",
-        "C:\\GasbinPersonal\\GasbinCoding\\electrostatics-fields-XR\\node_modules\\@iwsdk\\reference\\dist\\cli.js"
+        "C:\\GasbinPersonal\\GasbinCoding\\electrostatics-fields-VR\\node_modules\\@iwsdk\\reference\\dist\\cli.js"
       ],
       "enabled": true
     },
@@ -22,7 +22,7 @@
       "type": "local",
       "command": [
         "node",
-        "C:\\GasbinPersonal\\GasbinCoding\\electrostatics-fields-XR\\node_modules\\@meta-quest\\metavr\\bin.js",
+        "C:\\GasbinPersonal\\GasbinCoding\\electrostatics-fields-VR\\node_modules\\@meta-quest\\metavr\\bin.js",
         "mcp",
         "server"
       ],

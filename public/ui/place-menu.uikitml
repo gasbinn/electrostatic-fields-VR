@@ -1,0 +1,102 @@
+<!--
+  Placement menu, opened with the Y (or menu) button on the left controller.
+  Element ids are used by src/place-menu.ts. ASCII-only copy: the panel font
+  has no accented glyphs.
+-->
+<style>
+  .panel-root {
+    flex-direction: column;
+    width: 360px;
+  }
+
+  .panel-content {
+    flex-direction: column;
+    gap: 4px;
+    padding: 20px;
+    padding-bottom: 12px;
+  }
+
+  .eyebrow {
+    color: #6b5a00;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+  }
+
+  .eyebrow:dark {
+    color: #f5d90a;
+  }
+
+  .heading {
+    color: #1c1d20;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  .heading:dark {
+    color: #fafaf7;
+  }
+
+  .row {
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    flex-grow: 1;
+    justify-content: flex-start;
+  }
+
+  .wide {
+    justify-content: flex-start;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+
+  .last {
+    margin-bottom: 20px;
+  }
+</style>
+<Panel class="panel-root">
+  <div class="panel-content">
+    <div class="eyebrow">MENU</div>
+    <div class="heading">Colocar objeto</div>
+  </div>
+  <div class="row">
+    <Button id="btn-pos1" class="button">
+      <ButtonIcon><Plus></Plus></ButtonIcon>
+      <ButtonLabel>Carga +1 nC</ButtonLabel>
+    </Button>
+    <Button id="btn-neg1" class="button">
+      <ButtonIcon><Minus></Minus></ButtonIcon>
+      <ButtonLabel>Carga -1 nC</ButtonLabel>
+    </Button>
+  </div>
+  <div class="row">
+    <Button id="btn-pos2" class="button">
+      <ButtonIcon><Plus></Plus></ButtonIcon>
+      <ButtonLabel>Carga +2 nC</ButtonLabel>
+    </Button>
+    <Button id="btn-neg2" class="button">
+      <ButtonIcon><Minus></Minus></ButtonIcon>
+      <ButtonLabel>Carga -2 nC</ButtonLabel>
+    </Button>
+  </div>
+  <Button id="btn-sensor" class="wide">
+    <ButtonIcon><Crosshair></Crosshair></ButtonIcon>
+    <ButtonLabel>Sensor de campo</ButtonLabel>
+  </Button>
+  <Button id="btn-clear" class="wide">
+    <ButtonIcon><Trash2></Trash2></ButtonIcon>
+    <ButtonLabel>Quitar todo</ButtonLabel>
+  </Button>
+  <Button id="btn-close" class="wide last">
+    <ButtonIcon><X></X></ButtonIcon>
+    <ButtonLabel>Cerrar</ButtonLabel>
+  </Button>
+</Panel>

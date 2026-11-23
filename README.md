@@ -1,45 +1,32 @@
-# IWSDK App
+# Campos electrostáticos en VR
 
-This project uses `iwsdk.config.json` for declarative scene, asset, component,
-XR, and emulator configuration. Application systems remain explicit in
-`src/index.ts`.
+Proyecto final de Física A: una simulación de realidad virtual para Meta Quest
+que muestra que los campos electrostáticos son tridimensionales. El usuario
+mueve cargas puntuales y ve las líneas de campo trazadas en 3D.
+
+Hecho con el [Immersive Web SDK](https://iwsdk.dev) (WebXR + Three.js + ECS) en
+TypeScript.
 
 ```sh
 npm install
 npm run dev
 ```
 
-Use the Runtime and Editor controls in the managed browser to switch between
-the running experience and its authored scene.
+## Estructura
 
-## Starter content
+| Archivo | Qué hace |
+| --- | --- |
+| `src/physics/electrostatics.ts` | Física pura: Coulomb con superposición, potencial, semillas en esfera de Fibonacci y trazado RK4 de líneas de campo. |
+| `src/charge-component.ts` | Componente `PointCharge { q }` (carga en nC). |
+| `src/field-lines.ts` | Sistema que retraza las líneas cuando una carga se mueve. |
+| `src/panel.ts` | Botones de entrar/salir de VR del panel de información. |
+| `src/scene-assets/` | Modelos procedurales: cargas y piso. |
+| `public/scenes/main.iwsdk.scene.json` | Composición de la escena (posiciones y valores de las cargas). |
+| `public/ui/info-panel.uikitml` | Panel de información. |
 
-The robot and welcome panel are small examples of authored scene content plus
-runtime systems. The robot turns toward the player's head and plays a sound
-when pressed. To remove the robot, delete its scene node, its `RobotSystem`
-registration from `src/index.ts` or `src/index.js`, and its `Robot` registration
-from `src/components.ts` or `src/components.js`; you can then delete the unused
-robot component and system files. To remove the welcome panel, delete its scene
-node and its `PanelSystem` registration from the application entry point.
+## Modelo
 
-The robot stands on the second of three numbered stations. The first holds dark
-pieces you can grab and move, and the third holds a ring you can spin in place.
-The studio props (the plinths and the dark pieces, plus the floor and stage in VR
-and Desktop 3D) are built in code in `src/scene-assets/studio.scene-asset.ts` or
-`.js`. The VR and Desktop 3D background furniture is built the same way in
-`src/scene-assets/decor.scene-asset.ts` or `.js`, so the starter downloads no
-extra models. To remove any of them, delete their scene nodes and their entries
-in `src/assets.ts` or `src/assets.js`, then delete the files you no longer use.
-The station labels are `public/ui/label-*.uikitml`.
-
-The rest of the look is built-in components in the scene, which you can edit in
-the editor without code. The soft light on every object is the scene root's
-`IBLGradient` (select the Level Root to edit it), and the soft shadows under
-each object are `ContactShadow` nodes. In VR and Desktop 3D, the sky is the
-scene root's `DomeGradient` (its colors, tilt and dither are also on the Level
-Root), and the floor fades into it through the `DomeFade` on the floor node. AR
-projects have no sky or floor, so passthrough stays visible, and a
-`ShadowCatcher` node grounds the stations.
-
-- Minimal scene walkthrough: https://iwsdk.dev/guides/01b-minimal-scene.html
-- XR-enabled projects — IWER emulator controls: https://iwsdk.dev/guides/02-testing-experience.html#iwer-controls
+- E(r) = Σ k·qᵢ·(r − pᵢ)/|r − pᵢ|³, con k = 8.99×10⁹ N·m²/C² y q en nC.
+- Líneas de campo: dr/ds = E/|E| integrado con RK4 y paso adaptativo. Se
+  siembran 10 líneas por nC alrededor de cada carga y terminan en una carga de
+  signo opuesto, al salir de un radio máximo o donde |E| ≈ 0.

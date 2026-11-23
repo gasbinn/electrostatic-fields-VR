@@ -60,21 +60,22 @@
 </style>
 <Panel class="panel-root">
   <div class="panel-content">
-    <div class="eyebrow">IMMERSIVE WEB SDK</div>
-    <div class="heading">Hello, Immersive Web!</div>
-    <div class="body">Try each station around you,</div>
-    <div class="body">then make this scene your own.</div>
+    <div class="eyebrow">FISICA A - PROYECTO FINAL</div>
+    <div class="heading">Campos electrostaticos en 3D</div>
+    <div class="body">Agarra una carga con el rayo y muevela:</div>
+    <div class="body">las lineas de campo se recalculan al instante.</div>
+    <div class="body">Pulsa Y en el control izquierdo para abrir el menu y colocar cargas.</div>
   </div>
   <Button id="xr-button" class="button">
     <ButtonIcon>
       <RectangleGoggles></RectangleGoggles>
     </ButtonIcon>
-    <ButtonLabel class="button-label">Enter XR</ButtonLabel>
+    <ButtonLabel class="button-label">Entrar a VR</ButtonLabel>
   </Button>
   <Button id="exit-button" class="button" style="display: none">
     <ButtonIcon>
       <LogIn></LogIn>
     </ButtonIcon>
-    <ButtonLabel class="button-label">Exit to Browser</ButtonLabel>
+    <ButtonLabel class="button-label">Volver al navegador</ButtonLabel>
   </Button>
 </Panel>
