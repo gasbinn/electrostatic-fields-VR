@@ -5,7 +5,8 @@ import { PlaceMenuSystem } from './place-menu.js';
 import { FieldLineSystem } from './field-lines.js';
 import { FieldSensorSystem } from './field-sensor.js';
 import { ControllerRaySystem } from './controller-ray.js';
-import { GrabHighlightSystem } from './grab-highlight.js';
+import { InteractionHighlightSystem } from './interaction-highlight.js';
+import { ObjectDeleteSystem } from './object-delete.js';
 
 World.create(
   document.getElementById('scene-container') as HTMLDivElement,
@@ -16,5 +17,6 @@ World.create(
   world.registerSystem(PanelSystem);
   world.registerSystem(PlaceMenuSystem);
   world.registerSystem(ControllerRaySystem);
-  world.registerSystem(GrabHighlightSystem);
+  world.registerSystem(InteractionHighlightSystem);
+  world.registerSystem(ObjectDeleteSystem);
 });

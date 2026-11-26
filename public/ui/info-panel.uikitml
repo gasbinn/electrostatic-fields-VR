@@ -65,6 +65,7 @@
     <div class="body">Agarra una carga con el rayo y muevela:</div>
     <div class="body">las lineas de campo se recalculan al instante.</div>
     <div class="body">Pulsa Y en el control izquierdo para abrir el menu y colocar cargas.</div>
+    <div class="body">Pulsa B (o X) para borrar el objeto que agarras o senalas.</div>
   </div>
   <Button id="xr-button" class="button">
     <ButtonIcon>
